@@ -42,3 +42,26 @@ def ingresar_producto(productos):
 
         except ValueError:
             print("has ingresado dato incorrecto")
+
+
+    productos[codigo] = {
+    "nombre": nombre,
+    "categoria": categoria,
+    "talla": talla,
+    "precio": precio,
+    "cantidad": cantidad
+    }
+
+
+def mostrar_productos(productos):
+    print("\n Inventario completo:")
+
+    for codigo, datos in productos.items():
+        print(f"Código: {codigo}")
+        print(f"  Nombre: {datos['nombre']}")
+        print(f"  Categoría: {datos['categoria']}")
+        print(f"  Talla: {datos['talla']}")
+        print(f"  Precio: Q{datos['precio']:.2f}")
+        print(f"  Cantidad: {datos['cantidad']}")
+
+
