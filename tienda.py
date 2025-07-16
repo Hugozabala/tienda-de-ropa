@@ -64,4 +64,32 @@ def mostrar_productos(productos):
         print(f"  Precio: Q{datos['precio']:.2f}")
         print(f"  Cantidad: {datos['cantidad']}")
 
+def buscar_productos(productos):
+    codigo = int(input("ingrese el dodigo del producto que desea buscar: "))
+    if codigo in productos:
+        print(productos[codigo])
+        producto = productos[codigo]
+        print(f"  Nombre: {producto['nombre']}")
+        print(f"  Categoría: {producto['categoria']}")
+        print(f"  Talla: {producto['talla']}")
+        print(f"  Precio: Q{producto['precio']:.2f}")
+        print(f"  Cantidad en stock: {producto['cantidad']}")
 
+    else:
+        print("producto no existe")
+
+
+productos = {}
+
+try:
+    n = int(input("¿Cuántos productos desea ingresar? "))
+    for _ in range(n):
+        print("\nIngrese los datos del producto:")
+        ingresar_producto(productos)
+
+    mostrar_productos(productos)
+    buscar_productos(productos)
+
+
+except ValueError:
+    print(" Debe ingresar un número entero válido para la cantidad de productos.")
