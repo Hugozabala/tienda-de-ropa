@@ -41,4 +41,4 @@ def ingresar_producto(productos):
                 print ("deve ingresar un numero entero positivo")
 
         except ValueError:
-            print("")
+            print("has ingresado dato incorrecto")
